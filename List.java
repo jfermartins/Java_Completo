@@ -6,7 +6,7 @@ public class List {
 
         List<Integer> list = new ArrayList<>();
 
-        //adicionar à lista
+        //adicionar elementos à lista
         list.add("Maria");
         list.add("Alex");
         list.add("Bob");
@@ -16,14 +16,24 @@ public class List {
         //vizualizar o tamanho da lista
         System.out.println(list.size());
 
-        //remover pelo nome
+        //remover elementos pelo nome
         list.remove("Anna");
 
-        //remover pelo índice
+        //remover elementos pelo índice
         list.remove(1);
+
+        //remover elementos que atendam a predicados
+        //remover todos elementos que comecem pela letra M
+        list.removeIf(x -> charAt(0) == 'M');
+
+        //deixar na lista os elementos com a letra "A"
+        List<String> result = list.stream().filter(x -> x.charAt(0) == 'A');
+
 
         for(String x : list) {
             System.out.println(x);
         }
+
+        System.out.println("Index of Bob: " + list.indexOf("Bob"));
     }
 }
