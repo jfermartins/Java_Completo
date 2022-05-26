@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.ArrayList;
 
 public class List {
@@ -27,7 +28,10 @@ public class List {
         list.removeIf(x -> charAt(0) == 'M');
 
         //deixar na lista os elementos com a letra "A"
-        List<String> result = list.stream().filter(x -> x.charAt(0) == 'A');
+        List<String> result = list.stream().filter(x -> x.charAt(0) == 'A').collect(Collectors.toList());
+        for (String x : result) {
+            System.out.println(x);
+        }
 
 
         for(String x : list) {
