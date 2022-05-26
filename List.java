@@ -39,5 +39,9 @@ public class List {
         }
 
         System.out.println("Index of Bob: " + list.indexOf("Bob"));
+
+        System.out.println("-------------------------");
+         //encontrar o primeiro elemento da lista
+         String name = list.stream().filter(x -> x.charAt(0) == 'A').findFirst().orElse(null);
     }
 }
